@@ -1,0 +1,47 @@
+﻿@model DiPatternDemo.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Update Details</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="Studid" class="control-label"></label>
+                <input asp-for="Studid" class="form-control" readonly />
+                <span asp-validation-for="Studid" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="StudName" class="control-label"></label>
+                <input asp-for="StudName" class="form-control" />
+                <span asp-validation-for="StudName" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="StudDepartment" class="control-label"></label>
+                <input asp-for="StudDepartment" class="form-control" />
+                <span asp-validation-for="StudDepartment" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="StudPercentage" class="control-label"></label>
+                <input asp-for="StudPercentage" class="form-control" />
+                <span asp-validation-for="StudPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
